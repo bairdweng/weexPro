@@ -11,8 +11,9 @@ const isWin = /^win/.test(process.platform);
 
 //设置weex页面配置。
 const weexEntry = {
-    'index': helper.root('entry.js'),
-    'login': helper.root('login.js')
+    'index': helper.page_root_js('entry.js'),
+    'login': helper.page_root_js('login.js')
+    // 'register': helper.page_root_js('register.js')
 };
 const getEntryFileContent = (source, routerpath) => {
     let dependence = `import Vue from 'vue'\n`;
@@ -43,21 +44,35 @@ const getRouterFileContent = (source) => {
 }
 
 const getEntryFile = () => {
-    const entryFile = path.join(vueWebTemp, config.entryFilePath)
     const routerFile = path.join(vueWebTemp, config.routerFilePath)
-    fs.outputFileSync(entryFile, getEntryFileContent(helper.root(config.entryFilePath), routerFile));
-    fs.outputFileSync(routerFile, getRouterFileContent(helper.root(config.routerFilePath)));
+    fs.outputFileSync(routerFile, getRouterFileContent(helper.page_root_js(config.routerFilePath)));
+
+
+    const entryFile = path.join(vueWebTemp, config.entryFilePath)
+    fs.outputFileSync(entryFile, getEntryFileContent(helper.page_root_js(config.entryFilePath), routerFile));
+
 
 
     //设置出口配置。
     const loginFilePath = 'login.js';
     const loginFile = path.join(vueWebTemp, loginFilePath);
-    fs.outputFileSync(loginFile, getEntryFileContent(helper.root(loginFilePath), routerFile));
+    fs.outputFileSync(loginFile, getEntryFileContent(helper.page_root_js(loginFilePath), routerFile));
+
+
+
     return {
-        index2: entryFile,
-        login:loginFile
+        index: entryFile,
+        login: loginFile
     }
-}
+};
+
+//设置页面配置。
+const getPageConfig = (name, routerFile) => {
+    const File = path.join(vueWebTemp, name);
+    fs.outputFileSync(File, getEntryFileContent(helper.page_root_js(config.entryFilePath), routerFile));
+    return File
+};
+
 
 // The entry file for web needs to add some library. such as vue, weex-vue-render
 // 1. src/entry.js 

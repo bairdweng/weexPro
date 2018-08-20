@@ -62,21 +62,25 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 18);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _vueRouter = __webpack_require__(1);
+var _vueRouter = __webpack_require__(5);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _HelloWorld = __webpack_require__(2);
+var _HelloWorld = __webpack_require__(6);
 
 var _HelloWorld2 = _interopRequireDefault(_HelloWorld);
 
@@ -94,7 +98,7 @@ module.exports = new _vueRouter2.default({
 });
 
 /***/ }),
-/* 1 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2725,14 +2729,14 @@ if (inBrowser && window.Vue) {
 
 
 /***/ }),
-/* 2 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* template */
-var __vue_template__ = __webpack_require__(3)
+var __vue_template__ = __webpack_require__(7)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2761,7 +2765,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 3 */
+/* 7 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -2772,7 +2776,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports.render._withStripped = true
 
 /***/ }),
-/* 4 */
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */,
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2781,28 +2795,28 @@ module.exports.render._withStripped = true
 /*global Vue*/
 
 /* weex initialized here, please do not move this line */
-var router = __webpack_require__(0);
-var App = __webpack_require__(5);
+var router = __webpack_require__(4);
+var App = __webpack_require__(19);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
 
 /***/ }),
-/* 5 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(6)
+__vue_styles__.push(__webpack_require__(20)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(7)
+__vue_exports__ = __webpack_require__(21)
 
 /* template */
-var __vue_template__ = __webpack_require__(8)
+var __vue_template__ = __webpack_require__(22)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -2832,7 +2846,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 6 */
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -2861,7 +2875,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 7 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2889,7 +2903,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 8 */
+/* 22 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
