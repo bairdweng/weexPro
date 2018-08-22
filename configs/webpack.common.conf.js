@@ -9,11 +9,12 @@ const vueWebTemp = helper.rootNode(config.templateDir);
 const hasPluginInstalled = fs.existsSync(helper.rootNode(config.pluginFilePath));
 const isWin = /^win/.test(process.platform);
 
-//设置weex页面配置。
+//设置weex页面配置。registered.js
 const weexEntry = {
     'index': helper.page_root_js('entry.js'),
-    'login': helper.page_root_js('login.js')
-    // 'register': helper.page_root_js('register.js')
+    'login': helper.page_root_js('login.js'),
+    'registered': helper.page_root_js('registered.js'),
+    'game': helper.page_root_js('game.js')
 };
 const getEntryFileContent = (source, routerpath) => {
     let dependence = `import Vue from 'vue'\n`;
@@ -44,34 +45,25 @@ const getRouterFileContent = (source) => {
 }
 
 const getEntryFile = () => {
-    const routerFile = path.join(vueWebTemp, config.routerFilePath)
+    const routerFile = path.join(vueWebTemp, config.routerFilePath);
     fs.outputFileSync(routerFile, getRouterFileContent(helper.page_root_js(config.routerFilePath)));
 
-
-    const entryFile = path.join(vueWebTemp, config.entryFilePath)
+    const entryFile = path.join(vueWebTemp, config.entryFilePath);
     fs.outputFileSync(entryFile, getEntryFileContent(helper.page_root_js(config.entryFilePath), routerFile));
-
-
-
-    //设置出口配置。
-    const loginFilePath = 'login.js';
-    const loginFile = path.join(vueWebTemp, loginFilePath);
-    fs.outputFileSync(loginFile, getEntryFileContent(helper.page_root_js(loginFilePath), routerFile));
-
-
-
     return {
         index: entryFile,
-        login: loginFile
+        login: getPageConfig('login.js', routerFile),
+        registered: getPageConfig('registered.js', routerFile),
+        game: getPageConfig('game.js', routerFile)
     }
 };
 
 //设置页面配置。
-const getPageConfig = (name, routerFile) => {
+function getPageConfig(name, routerFile) {
     const File = path.join(vueWebTemp, name);
-    fs.outputFileSync(File, getEntryFileContent(helper.page_root_js(config.entryFilePath), routerFile));
+    fs.outputFileSync(File, getEntryFileContent(helper.page_root_js(name), routerFile));
     return File
-};
+}
 
 
 // The entry file for web needs to add some library. such as vue, weex-vue-render
@@ -116,7 +108,9 @@ const webConfig = {
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            '@': helper.resolve('src')
+            '@': helper.resolve('src'),
+            'helper': helper.resolve('src/helper'),
+            'Services': helper.resolve('src/Services')
         }
     },
     /*
