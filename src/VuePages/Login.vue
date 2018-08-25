@@ -1,6 +1,14 @@
 <template>
     <div class="rootview">
         <!--<div dataRole = "navbar" :style="{  backgroundColor: 'black' }"></div>-->
+
+        <div style="height: 40px;background-color: #009ff0;"></div>
+        <wxc-minibar title="登录"
+                     background-color="#009ff0"
+                     text-color="#FFFFFF"
+                     left-text=""
+                     leftButton=""></wxc-minibar>
+
         <div class="loginview">
             <div style="top: 20px">
                 <input type="text" placeholder="用户名" return-key-type="next" class="input" v-model="userName"/>
@@ -22,12 +30,13 @@
 </template>
 
 <script>
-    import {WxcButton, WxcLoading} from 'weex-ui';
+    import {WxcButton, WxcLoading, WxcMinibar} from 'weex-ui';
     import ApiServices from '../Services/ApiServices';
     const modal = weex.requireModule('modal');
     const navigator = weex.requireModule('navigator');
+    const globalEvent = weex.requireModule('globalEvent');
     export default {
-        components: {WxcButton, WxcLoading},
+        components: {WxcButton, WxcLoading, WxcMinibar},
         name: '登录页面',
         data () {
             return {
@@ -51,7 +60,49 @@
                 }
             }
         },
+        mounted(){
+            try {
+                if (navigator) {
+                    navigator.setNavBarHidden({hidden: "1"});
+                }
+            }
+            catch (r) {
+
+            }
+
+        },
+        created(){
+//            modal.toast({'message': '哈哈哈哈', 'duration': 1});
+
+            globalEvent.addEventListener("geolocation", function (e) {
+
+                modal.toast({'message': '2222222222222222', 'duration': 1});
+
+
+//                console.log("WXApplicationDidBecomeActiveEvent");
+            });
+        },
         methods: {
+            onappear (event) {
+                console.log('onappear:', event)
+                modal.toast({
+                    message: 'onappear',
+                    duration: 0.8
+                })
+            },
+            ondisappear (event) {
+                console.log('ondisappear:', event)
+                modal.toast({
+                    message: 'ondisappear',
+                    duration: 0.8
+                })
+            },
+            minibarLeftButtonClick(){
+
+            },
+            minibarRightButtonClick(){
+
+            },
             loginBtnClick(){
                 this.isShow = true;
                 ApiServices.login(this.userName, this.passWord, (ret) => {
@@ -64,14 +115,15 @@
                         modal.toast({'message': ret['error'], 'duration': 1});
                     }
                     else {
-//                        modal.toast({'message': '未知异常', 'duration': 1});
+
                     }
-                })
+                });
             },
+
             goGamePage(){
                 setTimeout(() => {
                     let nextURL = this.getJumpBaseUrl('game');
-                    navigator.push({url: nextURL})
+                    navigator.push({url: nextURL, animated: 'false'})
                 }, 2000);
             },
             resBtnClick(){
@@ -117,7 +169,7 @@
         bottom: 0;
         right: 0;
         /*height: 1334px;*/
-        background-color: #00B4FF;
+        background-color: #000000;
     }
 
     .input_line {

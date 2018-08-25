@@ -42046,7 +42046,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.rootview[data-v-e9aa292e] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    /*height: 1334px;*/\n    background-color: #00B4FF;\n}\n.input_line[data-v-e9aa292e] {\n    /*width: 100%;*/\n    height: 1px;\n    /*position: absolute;*/\n    background-color: red;\n}\n.input[data-v-e9aa292e] {\n    /*background-color: red;*/\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n    height: 1.17333rem;\n    /*border-bottom-width: 2px;*/\n    /*border-color: #41B883;*/\n}\n.loginview[data-v-e9aa292e] {\n    position: absolute;\n    top: 2.66667rem;\n    left: 0.53333rem;\n    right: 0.53333rem;\n    height: 6.66667rem;\n    background-color: white;\n    border-radius: 0.26667rem;\n}\n", ""]);
+exports.push([module.i, "\n.rootview[data-v-e9aa292e] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    /*height: 1334px;*/\n    background-color: black;\n}\n.input_line[data-v-e9aa292e] {\n    /*width: 100%;*/\n    height: 1px;\n    /*position: absolute;*/\n    background-color: red;\n}\n.input[data-v-e9aa292e] {\n    /*background-color: red;*/\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n    height: 1.17333rem;\n    /*border-bottom-width: 2px;*/\n    /*border-color: #41B883;*/\n}\n.loginview[data-v-e9aa292e] {\n    position: absolute;\n    top: 2.66667rem;\n    left: 0.53333rem;\n    right: 0.53333rem;\n    height: 6.66667rem;\n    background-color: white;\n    border-radius: 0.26667rem;\n}\n", ""]);
 
 // exports
 
@@ -42064,7 +42064,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _weexUi = __webpack_require__(28);
 
-var modal = weex.requireModule('modal'); //
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -42091,10 +42097,10 @@ var modal = weex.requireModule('modal'); //
 //
 
 
+var modal = weex.requireModule('modal');
 var navigator = weex.requireModule('navigator');
-
 exports.default = {
-    components: { WxcButton: _weexUi.WxcButton },
+    components: { WxcButton: _weexUi.WxcButton, WxcLoading: _weexUi.WxcLoading, WxcMinibar: _weexUi.WxcMinibar },
     name: '注册页面',
     data: function data() {
         return {
@@ -42122,14 +42128,7 @@ exports.default = {
 
     methods: {
         loginBtnClick: function loginBtnClick(e) {
-            //                modal.toast({'message': '点击了登录', 'duration': 1});
-
-            //                navigator.push({url: nextURL})
-
-
-            navigator.setNavBarHidden({ hidden: 0 });
-            //                WX_EXPORT_METHOD(@selector(setNavBarHidden:callback:))
-            //                weex.requiredModules("WXNavigatorModule").setNavBarHidden('NO');
+            modal.toast({ 'message': '点击了登录', 'duration': 1 });
         },
         resBtnClick: function resBtnClick(e) {
             modal.toast({ 'message': '点击了注册按钮', 'duration': 1 });
@@ -42148,6 +42147,26 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "weex-type": "div"
     }
   }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    staticStyle: {
+      "height": "0.53333rem",
+      "background-color": "#009ff0"
+    },
+    attrs: {
+      "weex-type": "div"
+    }
+  }), _vm._v(" "), _c('wxc-minibar', {
+    attrs: {
+      "title": "注册",
+      "background-color": "#009ff0",
+      "text-color": "#FFFFFF",
+      "left-text": "",
+      "data-evt-wxcMinibarLeftButtonClicked": ""
+    },
+    on: {
+      "wxcMinibarLeftButtonClicked": _vm.minibarLeftButtonClick
+    }
+  }), _vm._v(" "), _c('div', {
     staticClass: "loginview weex-ct weex-div",
     attrs: {
       "weex-type": "div"
@@ -42224,7 +42243,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "wxcButtonClicked": _vm.resBtnClick
     }
-  })], 1)])])])
+  })], 1)])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

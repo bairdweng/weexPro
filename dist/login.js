@@ -21051,7 +21051,7 @@ module.exports = {
     "left": 0,
     "bottom": 0,
     "right": 0,
-    "backgroundColor": "#00B4FF"
+    "backgroundColor": "#000000"
   },
   "input_line": {
     "height": "1",
@@ -21107,6 +21107,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 var _weexUi = __webpack_require__(18);
 
@@ -21118,8 +21126,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var modal = weex.requireModule('modal');
 var navigator = weex.requireModule('navigator');
+var globalEvent = weex.requireModule('globalEvent');
 exports.default = {
-    components: { WxcButton: _weexUi.WxcButton, WxcLoading: _weexUi.WxcLoading },
+    components: { WxcButton: _weexUi.WxcButton, WxcLoading: _weexUi.WxcLoading, WxcMinibar: _weexUi.WxcMinibar },
     name: '登录页面',
     data: function data() {
         return {
@@ -21144,7 +21153,41 @@ exports.default = {
             };
         }
     },
+    mounted: function mounted() {
+        try {
+            if (navigator) {
+                navigator.setNavBarHidden({ hidden: "1" });
+            }
+        } catch (r) {}
+    },
+    created: function created() {
+        //            modal.toast({'message': '哈哈哈哈', 'duration': 1});
+
+        globalEvent.addEventListener("geolocation", function (e) {
+
+            modal.toast({ 'message': '2222222222222222', 'duration': 1 });
+
+            //                console.log("WXApplicationDidBecomeActiveEvent");
+        });
+    },
+
     methods: {
+        onappear: function onappear(event) {
+            console.log('onappear:', event);
+            modal.toast({
+                message: 'onappear',
+                duration: 0.8
+            });
+        },
+        ondisappear: function ondisappear(event) {
+            console.log('ondisappear:', event);
+            modal.toast({
+                message: 'ondisappear',
+                duration: 0.8
+            });
+        },
+        minibarLeftButtonClick: function minibarLeftButtonClick() {},
+        minibarRightButtonClick: function minibarRightButtonClick() {},
         loginBtnClick: function loginBtnClick() {
             var _this = this;
 
@@ -21156,9 +21199,7 @@ exports.default = {
                     _this.goGamePage();
                 } else if (ret && ret['error']) {
                     modal.toast({ 'message': ret['error'], 'duration': 1 });
-                } else {
-                    //                        modal.toast({'message': '未知异常', 'duration': 1});
-                }
+                } else {}
             });
         },
         goGamePage: function goGamePage() {
@@ -21166,7 +21207,7 @@ exports.default = {
 
             setTimeout(function () {
                 var nextURL = _this2.getJumpBaseUrl('game');
-                navigator.push({ url: nextURL });
+                navigator.push({ url: nextURL, animated: 'false' });
             }, 2000);
         },
         resBtnClick: function resBtnClick() {
@@ -21277,6 +21318,19 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: ["rootview"]
   }, [_c('div', {
+    staticStyle: {
+      height: "40px",
+      backgroundColor: "#009ff0"
+    }
+  }), _c('wxc-minibar', {
+    attrs: {
+      "title": "登录",
+      "backgroundColor": "#009ff0",
+      "textColor": "#FFFFFF",
+      "leftText": "",
+      "leftButton": ""
+    }
+  }), _c('div', {
     staticClass: ["loginview"]
   }, [_c('div', {
     staticStyle: {

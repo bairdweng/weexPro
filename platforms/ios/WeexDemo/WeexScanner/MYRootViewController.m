@@ -14,6 +14,7 @@
 #import <WeexSDK/WXSDKManager.h>
 #import <SRWebSocket.h>
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
+#import "WXSDKInstance+Helper.h"
 @interface MYRootViewController ()<UIScrollViewDelegate, UIWebViewDelegate,SRWebSocketDelegate>
 @property (nonatomic, strong) WXSDKInstance *instance;
 @property (nonatomic, strong) UIView *weexView;
@@ -37,6 +38,8 @@
 #endif
     
     [self render];
+
+    
     // Do any additional setup after loading the view.
 }
 - (void)render

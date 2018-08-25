@@ -2,7 +2,13 @@
     <!--<div style="width: 100%;height: 100%;position: absolute">-->
     <!--<div  style="background: red;width: 100%;height: 100%">-->
     <div class="rootview">
-        <!--<text style="text-align: center;color: red">{{name}}</text>-->
+        <div style="height: 40px;background-color: #009ff0;"></div>
+        <wxc-minibar title="注册"
+                     background-color="#009ff0"
+                     text-color="#FFFFFF"
+                     left-text=""
+                     @wxcMinibarLeftButtonClicked="minibarLeftButtonClick"
+        ></wxc-minibar>
         <div class="loginview">
             <div style="top: 20px">
                 <input type="text" placeholder="用户名" return-key-type="next" class="input"/>
@@ -25,12 +31,12 @@
 
 <script>
 
-    import {WxcButton} from 'weex-ui'
     const modal = weex.requireModule('modal');
     const navigator = weex.requireModule('navigator');
+    import {WxcButton, WxcLoading, WxcMinibar} from 'weex-ui';
 
     export default {
-        components: {WxcButton},
+        components: {WxcButton, WxcLoading, WxcMinibar},
         name: '注册页面',
         data () {
             return {
@@ -56,14 +62,7 @@
         },
         methods: {
             loginBtnClick(e){
-//                modal.toast({'message': '点击了登录', 'duration': 1});
-
-//                navigator.push({url: nextURL})
-
-
-                navigator.setNavBarHidden({hidden: 0});
-//                WX_EXPORT_METHOD(@selector(setNavBarHidden:callback:))
-//                weex.requiredModules("WXNavigatorModule").setNavBarHidden('NO');
+                modal.toast({'message': '点击了登录', 'duration': 1});
             },
             resBtnClick(e){
                 modal.toast({'message': '点击了注册按钮', 'duration': 1});
@@ -80,7 +79,7 @@
         bottom: 0;
         right: 0;
         /*height: 1334px;*/
-        background-color: #00B4FF;
+        background-color: black;
     }
 
     .input_line {

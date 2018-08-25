@@ -2979,7 +2979,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.clickOntheText
     }
-  }, [_vm._v("123123")])])
+  }, [_vm._v("测试")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

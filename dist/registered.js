@@ -21061,7 +21061,7 @@ module.exports = {
     "left": 0,
     "bottom": 0,
     "right": 0,
-    "backgroundColor": "#00B4FF"
+    "backgroundColor": "#000000"
   },
   "input_line": {
     "height": "1",
@@ -21096,7 +21096,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _weexUi = __webpack_require__(18);
 
-var modal = weex.requireModule('modal'); //
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21123,10 +21129,10 @@ var modal = weex.requireModule('modal'); //
 //
 
 
+var modal = weex.requireModule('modal');
 var navigator = weex.requireModule('navigator');
-
 exports.default = {
-    components: { WxcButton: _weexUi.WxcButton },
+    components: { WxcButton: _weexUi.WxcButton, WxcLoading: _weexUi.WxcLoading, WxcMinibar: _weexUi.WxcMinibar },
     name: '注册页面',
     data: function data() {
         return {
@@ -21154,14 +21160,7 @@ exports.default = {
 
     methods: {
         loginBtnClick: function loginBtnClick(e) {
-            //                modal.toast({'message': '点击了登录', 'duration': 1});
-
-            //                navigator.push({url: nextURL})
-
-
-            navigator.setNavBarHidden({ hidden: 0 });
-            //                WX_EXPORT_METHOD(@selector(setNavBarHidden:callback:))
-            //                weex.requiredModules("WXNavigatorModule").setNavBarHidden('NO');
+            modal.toast({ 'message': '点击了登录', 'duration': 1 });
         },
         resBtnClick: function resBtnClick(e) {
             modal.toast({ 'message': '点击了注册按钮', 'duration': 1 });
@@ -21177,6 +21176,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: ["rootview"]
   }, [_c('div', {
+    staticStyle: {
+      height: "40px",
+      backgroundColor: "#009ff0"
+    }
+  }), _c('wxc-minibar', {
+    attrs: {
+      "title": "注册",
+      "backgroundColor": "#009ff0",
+      "textColor": "#FFFFFF",
+      "leftText": ""
+    },
+    on: {
+      "wxcMinibarLeftButtonClicked": _vm.minibarLeftButtonClick
+    }
+  }), _c('div', {
     staticClass: ["loginview"]
   }, [_c('div', {
     staticStyle: {
@@ -21226,7 +21240,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "wxcButtonClicked": _vm.resBtnClick
     }
-  })], 1)])])])
+  })], 1)])])], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 

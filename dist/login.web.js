@@ -42035,7 +42035,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n.rootview[data-v-20159c94] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    /*height: 1334px;*/\n    background-color: #00B4FF;\n}\n.input_line[data-v-20159c94] {\n    /*width: 100%;*/\n    height: 1px;\n    /*position: absolute;*/\n    background-color: red;\n}\n.input[data-v-20159c94] {\n    /*background-color: red;*/\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n    height: 1.17333rem;\n    /*border-bottom-width: 2px;*/\n    /*border-color: #41B883;*/\n}\n.loginview[data-v-20159c94] {\n    position: absolute;\n    top: 2.66667rem;\n    left: 0.53333rem;\n    right: 0.53333rem;\n    height: 6.66667rem;\n    background-color: white;\n    border-radius: 0.26667rem;\n}\n", ""]);
+exports.push([module.i, "\n.rootview[data-v-20159c94] {\n    position: absolute;\n    top: 0;\n    left: 0;\n    bottom: 0;\n    right: 0;\n    /*height: 1334px;*/\n    background-color: #000000;\n}\n.input_line[data-v-20159c94] {\n    /*width: 100%;*/\n    height: 1px;\n    /*position: absolute;*/\n    background-color: red;\n}\n.input[data-v-20159c94] {\n    /*background-color: red;*/\n    margin-left: 0.2rem;\n    margin-right: 0.2rem;\n    height: 1.17333rem;\n    /*border-bottom-width: 2px;*/\n    /*border-color: #41B883;*/\n}\n.loginview[data-v-20159c94] {\n    position: absolute;\n    top: 2.66667rem;\n    left: 0.53333rem;\n    right: 0.53333rem;\n    height: 6.66667rem;\n    background-color: white;\n    border-radius: 0.26667rem;\n}\n", ""]);
 
 // exports
 
@@ -42074,6 +42074,14 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 var _weexUi = __webpack_require__(28);
 
@@ -42085,8 +42093,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var modal = weex.requireModule('modal');
 var navigator = weex.requireModule('navigator');
+var globalEvent = weex.requireModule('globalEvent');
 exports.default = {
-    components: { WxcButton: _weexUi.WxcButton, WxcLoading: _weexUi.WxcLoading },
+    components: { WxcButton: _weexUi.WxcButton, WxcLoading: _weexUi.WxcLoading, WxcMinibar: _weexUi.WxcMinibar },
     name: '登录页面',
     data: function data() {
         return {
@@ -42111,7 +42120,41 @@ exports.default = {
             };
         }
     },
+    mounted: function mounted() {
+        try {
+            if (navigator) {
+                navigator.setNavBarHidden({ hidden: "1" });
+            }
+        } catch (r) {}
+    },
+    created: function created() {
+        //            modal.toast({'message': '哈哈哈哈', 'duration': 1});
+
+        globalEvent.addEventListener("geolocation", function (e) {
+
+            modal.toast({ 'message': '2222222222222222', 'duration': 1 });
+
+            //                console.log("WXApplicationDidBecomeActiveEvent");
+        });
+    },
+
     methods: {
+        onappear: function onappear(event) {
+            console.log('onappear:', event);
+            modal.toast({
+                message: 'onappear',
+                duration: 0.8
+            });
+        },
+        ondisappear: function ondisappear(event) {
+            console.log('ondisappear:', event);
+            modal.toast({
+                message: 'ondisappear',
+                duration: 0.8
+            });
+        },
+        minibarLeftButtonClick: function minibarLeftButtonClick() {},
+        minibarRightButtonClick: function minibarRightButtonClick() {},
         loginBtnClick: function loginBtnClick() {
             var _this = this;
 
@@ -42123,9 +42166,7 @@ exports.default = {
                     _this.goGamePage();
                 } else if (ret && ret['error']) {
                     modal.toast({ 'message': ret['error'], 'duration': 1 });
-                } else {
-                    //                        modal.toast({'message': '未知异常', 'duration': 1});
-                }
+                } else {}
             });
         },
         goGamePage: function goGamePage() {
@@ -42133,7 +42174,7 @@ exports.default = {
 
             setTimeout(function () {
                 var nextURL = _this2.getJumpBaseUrl('game');
-                navigator.push({ url: nextURL });
+                navigator.push({ url: nextURL, animated: 'false' });
             }, 2000);
         },
         resBtnClick: function resBtnClick() {
@@ -42247,6 +42288,23 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "weex-type": "div"
     }
   }, [_c('div', {
+    staticClass: " weex-ct weex-div",
+    staticStyle: {
+      "height": "0.53333rem",
+      "background-color": "#009ff0"
+    },
+    attrs: {
+      "weex-type": "div"
+    }
+  }), _vm._v(" "), _c('wxc-minibar', {
+    attrs: {
+      "title": "登录",
+      "background-color": "#009ff0",
+      "text-color": "#FFFFFF",
+      "left-text": "",
+      "leftButton": ""
+    }
+  }), _vm._v(" "), _c('div', {
     staticClass: "loginview weex-ct weex-div",
     attrs: {
       "weex-type": "div"

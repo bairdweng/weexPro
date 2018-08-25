@@ -4,7 +4,7 @@
         <!--<image :src="logo" class="logo" />-->
         <!--<text class="greeting">The environment is ready!123132123123123</text>-->
         <!--<router-view/>-->
-        <text style="color:red" @click="clickOntheText">123123</text>
+        <text style="color:red" @click="clickOntheText">测试</text>
     </div>
 </template>
 <script>
