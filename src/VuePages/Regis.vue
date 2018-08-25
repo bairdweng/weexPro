@@ -27,13 +27,14 @@
 
     import {WxcButton} from 'weex-ui'
     const modal = weex.requireModule('modal');
+    const navigator = weex.requireModule('navigator');
+
     export default {
         components: {WxcButton},
         name: '注册页面',
         data () {
             return {
-                name: '登录2222',
-
+                name: '登录2222'
             }
         },
         computed: {
@@ -50,9 +51,19 @@
                 }
             }
         },
+        mounted(){
+//            cosole.log('')
+        },
         methods: {
             loginBtnClick(e){
-                modal.toast({'message': '点击了登录', 'duration': 1});
+//                modal.toast({'message': '点击了登录', 'duration': 1});
+
+//                navigator.push({url: nextURL})
+
+
+                navigator.setNavBarHidden({hidden: 0});
+//                WX_EXPORT_METHOD(@selector(setNavBarHidden:callback:))
+//                weex.requiredModules("WXNavigatorModule").setNavBarHidden('NO');
             },
             resBtnClick(e){
                 modal.toast({'message': '点击了注册按钮', 'duration': 1});

@@ -43,11 +43,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [self setupNaviBar];
     [self setupRightBarItem];
+    [self.navigationController setNavigationBarHidden:YES];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     _weexHeight = self.view.frame.size.height - 64;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationRefreshInstance:) name:@"RefreshInstance" object:nil];
     
@@ -78,9 +77,8 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self updateInstanceState:WeexInstanceDisappear];
+//    [self updateInstanceState:WeexInstanceDisappear];
 }
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

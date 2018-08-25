@@ -42073,7 +42073,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 //
 //
 //
-
+//
 
 var _weexUi = __webpack_require__(28);
 
@@ -42085,7 +42085,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var modal = weex.requireModule('modal');
 var navigator = weex.requireModule('navigator');
-
 exports.default = {
     components: { WxcButton: _weexUi.WxcButton, WxcLoading: _weexUi.WxcLoading },
     name: '登录页面',
@@ -42095,7 +42094,6 @@ exports.default = {
             isShow: false,
             userName: '',
             passWord: ''
-
         };
     },
 

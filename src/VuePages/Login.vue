@@ -1,5 +1,6 @@
 <template>
     <div class="rootview">
+        <!--<div dataRole = "navbar" :style="{  backgroundColor: 'black' }"></div>-->
         <div class="loginview">
             <div style="top: 20px">
                 <input type="text" placeholder="用户名" return-key-type="next" class="input" v-model="userName"/>

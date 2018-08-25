@@ -11,7 +11,7 @@
 #import <WeexSDK/WeexSDK.h>
 #import "WXDemoViewController.h"
 #import "WXImgLoaderDefaultImpl.h"
-
+#import "MYRootViewController.h"
 @implementation WeexSDKManager
 
 + (void)setup;
@@ -58,8 +58,12 @@
 
 + (void)loadCustomContainWithScannerWithUrl:(NSURL *)url
 {
-    UIViewController *demo = [[WXDemoViewController alloc] init];
-    ((WXDemoViewController *)demo).url = url;
+//    UIViewController *demo = [[WXDemoViewController alloc] init];
+//    ((WXDemoViewController *)demo).url = url;
+//    [[UIApplication sharedApplication] delegate].window.rootViewController = [[WXRootViewController alloc] initWithRootViewController:demo];
+    
+    MYRootViewController *demo = [[MYRootViewController alloc] init];
+    demo.url = url;
     [[UIApplication sharedApplication] delegate].window.rootViewController = [[WXRootViewController alloc] initWithRootViewController:demo];
 }
 

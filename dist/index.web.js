@@ -14249,15 +14249,24 @@ var navigator = weex.requireModule('navigator'); //
 //
 //
 //
+//
 
 exports.default = {
     name: 'App',
     data: function data() {
         return {};
     },
+
+    methods: {
+        clickOntheText: function clickOntheText() {
+            navigator.push({ url: _Navigation2.default.getJumpBaseUrl('login') });
+            //                console.log('1231313123');
+            //                alert('123');
+        }
+    },
     mounted: function mounted() {
         //            console.log('123123123131');
-        navigator.push({ url: _Navigation2.default.getJumpBaseUrl('login') });
+        //            navigator.push({url: Navigation.getJumpBaseUrl('login')});
     }
 };
 
@@ -14328,9 +14337,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "color": "red"
     },
     attrs: {
-      "weex-type": "text"
+      "weex-type": "text",
+      "data-evt-click": ""
+    },
+    on: {
+      "click": _vm.$stopOuterA,
+      "weex$tap": function($event) {
+        $event.stopPropagation();
+        return _vm.clickOntheText($event)
+      }
     }
-  }, [_vm._v("2222223")])])
+  }, [_vm._v("123123")])])
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {

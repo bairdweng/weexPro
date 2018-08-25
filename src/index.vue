@@ -1,9 +1,10 @@
 <template>
     <div class="wrapper">
+        <!--<div dataRole = "navbar" :style="{  backgroundColor: 'black' }"></div>-->
         <!--<image :src="logo" class="logo" />-->
         <!--<text class="greeting">The environment is ready!123132123123123</text>-->
         <!--<router-view/>-->
-        <text style="color:red">2222223</text>
+        <text style="color:red" @click="clickOntheText">123123</text>
     </div>
 </template>
 <script>
@@ -14,9 +15,16 @@
         data () {
             return {}
         },
+        methods: {
+            clickOntheText(){
+                navigator.push({url: Navigation.getJumpBaseUrl('login')});
+//                console.log('1231313123');
+//                alert('123');
+            }
+        },
         mounted(){
 //            console.log('123123123131');
-            navigator.push({url: Navigation.getJumpBaseUrl('login')});
+//            navigator.push({url: Navigation.getJumpBaseUrl('login')});
         }
     }
 </script>

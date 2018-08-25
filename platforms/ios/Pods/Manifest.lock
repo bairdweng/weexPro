@@ -1,4 +1,5 @@
 PODS:
+  - FDFullscreenPopGesture (1.1)
   - SDWebImage (3.7.5):
     - SDWebImage/Core (= 3.7.5)
   - SDWebImage/Core (3.7.5)
@@ -8,6 +9,7 @@ PODS:
   - WeexSDK (0.18.0.2)
 
 DEPENDENCIES:
+  - FDFullscreenPopGesture (= 1.1)
   - SDWebImage (= 3.7.5)
   - SocketRocket (= 0.4.2)
   - WeexPluginLoader
@@ -15,17 +17,19 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - FDFullscreenPopGesture
     - SDWebImage
     - SocketRocket
     - WeexPluginLoader
     - WeexSDK
 
 SPEC CHECKSUMS:
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
   WeexPluginLoader: 85c1304f8ba29864e58531614a0acfeceef1b85c
   WeexSDK: bc48cc6fab6f0ad2ec87d1e1c1330e097d2ad0f3
 
-PODFILE CHECKSUM: ec0e31166e143bcabfaa1962c9ed874f00c462e6
+PODFILE CHECKSUM: fcb9efb60f7491412ad814607f0cd0a9c02719cf
 
 COCOAPODS: 1.5.3

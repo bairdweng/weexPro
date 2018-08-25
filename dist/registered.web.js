@@ -42091,13 +42091,14 @@ var modal = weex.requireModule('modal'); //
 //
 
 
+var navigator = weex.requireModule('navigator');
+
 exports.default = {
     components: { WxcButton: _weexUi.WxcButton },
     name: '注册页面',
     data: function data() {
         return {
             name: '登录2222'
-
         };
     },
 
@@ -42115,9 +42116,20 @@ exports.default = {
             };
         }
     },
+    mounted: function mounted() {
+        //            cosole.log('')
+    },
+
     methods: {
         loginBtnClick: function loginBtnClick(e) {
-            modal.toast({ 'message': '点击了登录', 'duration': 1 });
+            //                modal.toast({'message': '点击了登录', 'duration': 1});
+
+            //                navigator.push({url: nextURL})
+
+
+            navigator.setNavBarHidden({ hidden: 0 });
+            //                WX_EXPORT_METHOD(@selector(setNavBarHidden:callback:))
+            //                weex.requiredModules("WXNavigatorModule").setNavBarHidden('NO');
         },
         resBtnClick: function resBtnClick(e) {
             modal.toast({ 'message': '点击了注册按钮', 'duration': 1 });
