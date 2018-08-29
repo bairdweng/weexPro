@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 259);
+/******/ 	return __webpack_require__(__webpack_require__.s = 253);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -20979,13 +20979,7 @@ module.exports.render._withStripped = true
 /* 250 */,
 /* 251 */,
 /* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21001,27 +20995,27 @@ module.exports.render._withStripped = true
 
 /* weex initialized here, please do not move this line */
 var router = __webpack_require__(14);
-var App = __webpack_require__(260);
+var App = __webpack_require__(254);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
 
 /***/ }),
-/* 260 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(261)
+__vue_styles__.push(__webpack_require__(255)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(262)
+__vue_exports__ = __webpack_require__(256)
 
 /* template */
-var __vue_template__ = __webpack_require__(263)
+var __vue_template__ = __webpack_require__(257)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -21051,7 +21045,7 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 261 */
+/* 255 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -21084,7 +21078,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 262 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21159,6 +21153,9 @@ exports.default = {
     },
 
     methods: {
+        onViewappear: function onViewappear() {
+            navigator.setNavBarHidden({ hidden: "1" });
+        },
         loginBtnClick: function loginBtnClick(e) {
             modal.toast({ 'message': '点击了登录', 'duration': 1 });
         },
@@ -21169,12 +21166,15 @@ exports.default = {
 };
 
 /***/ }),
-/* 263 */
+/* 257 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["rootview"]
+    staticClass: ["rootview"],
+    on: {
+      "viewappear": _vm.onViewappear
+    }
   }, [_c('div', {
     staticStyle: {
       height: "40px",

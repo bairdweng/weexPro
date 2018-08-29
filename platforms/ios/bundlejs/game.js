@@ -62,7 +62,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 264);
+/******/ 	return __webpack_require__(__webpack_require__.s = 258);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -20984,13 +20984,7 @@ module.exports.render._withStripped = true
 /* 255 */,
 /* 256 */,
 /* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */,
-/* 263 */,
-/* 264 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21003,27 +20997,27 @@ module.exports.render._withStripped = true
 
 /* weex initialized here, please do not move this line */
 var router = __webpack_require__(14);
-var App = __webpack_require__(265);
+var App = __webpack_require__(259);
 /* eslint-disable no-new */
 new Vue(Vue.util.extend({ el: '#root', router: router }, App));
 router.push('/');
 
 /***/ }),
-/* 265 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __vue_exports__, __vue_options__
 var __vue_styles__ = []
 
 /* styles */
-__vue_styles__.push(__webpack_require__(266)
+__vue_styles__.push(__webpack_require__(260)
 )
 
 /* script */
-__vue_exports__ = __webpack_require__(267)
+__vue_exports__ = __webpack_require__(261)
 
 /* template */
-var __vue_template__ = __webpack_require__(268)
+var __vue_template__ = __webpack_require__(262)
 __vue_options__ = __vue_exports__ = __vue_exports__ || {}
 if (
   typeof __vue_exports__.default === "object" ||
@@ -21053,21 +21047,20 @@ module.exports = __vue_exports__
 
 
 /***/ }),
-/* 266 */
+/* 260 */
 /***/ (function(module, exports) {
 
 module.exports = {
-  "rootview": {
+  "game_rootview": {
     "position": "absolute",
-    "top": 0,
-    "left": 0,
-    "bottom": 0,
-    "right": 0,
-    "backgroundColor": "#FFFFFF"
+    "top": "0",
+    "left": "0",
+    "bottom": "40",
+    "right": "0"
   },
   "gamewebview": {
     "position": "absolute",
-    "top": "0",
+    "top": "-40",
     "left": "0",
     "right": "0",
     "bottom": "0",
@@ -21076,7 +21069,7 @@ module.exports = {
 }
 
 /***/ }),
-/* 267 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21097,6 +21090,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 var _weexUi = __webpack_require__(18);
 
 var modal = weex.requireModule('modal');
+var customEvent = weex.requireModule('event');
 var navigator = weex.requireModule('navigator');
 exports.default = {
     components: { WxcButton: _weexUi.WxcButton },
@@ -21123,12 +21117,22 @@ exports.default = {
             };
         }
     },
+    created: function created() {
+        customEvent.setStateBarHidden('YES');
+        //            modal.toast({'message': '2222222222222222', 'duration': 1});
+    },
+
     methods: {
+        onViewappear: function onViewappear() {
+            modal.toast({ 'message': '=======onViewappear', 'duration': 1 });
+            //                customEvent.setStateBarHidden('YES');
+        },
         loginBtnClick: function loginBtnClick(e) {
-            modal.toast({ 'message': '点击了登录', 'duration': 1 });
+
+            //                modal.toast({'message': '点击了登录', 'duration': 1});
+            //                customEvent.
         },
         resBtnClick: function resBtnClick() {
-
             var nextURL = this.getJumpBaseUrl('registered');
             navigator.push({ url: nextURL });
         },
@@ -21165,12 +21169,15 @@ exports.default = {
 };
 
 /***/ }),
-/* 268 */
+/* 262 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: ["rootview"]
+    staticClass: ["game_rootview"],
+    on: {
+      "viewappear": _vm.onViewappear
+    }
   }, [_c('web', {
     ref: "webview",
     staticClass: ["gamewebview"],

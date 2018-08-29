@@ -12,6 +12,7 @@
 #import "WXDemoViewController.h"
 #import "WXImgLoaderDefaultImpl.h"
 #import "MYRootViewController.h"
+#import "WXCustomEventModule.h"
 @implementation WeexSDKManager
 
 + (void)setup;
@@ -46,10 +47,11 @@
     [WXAppConfiguration setAppName:@"WeexDemo"];
     [WXAppConfiguration setAppVersion:@"1.8.3"];
     [WXAppConfiguration setExternalUserAgent:@"ExternalUA"];
-    
     [WXSDKEngine initSDKEnvironment];
-    
+    [WXSDKEngine registerModule:@"event" withClass: [WXCustomEventModule class]];
     [WXSDKEngine registerHandler:[WXImgLoaderDefaultImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
+    
+    
     
 #ifdef DEBUG
     [WXLog setLogLevel:WXLogLevelLog];
@@ -61,7 +63,6 @@
 //    UIViewController *demo = [[WXDemoViewController alloc] init];
 //    ((WXDemoViewController *)demo).url = url;
 //    [[UIApplication sharedApplication] delegate].window.rootViewController = [[WXRootViewController alloc] initWithRootViewController:demo];
-    
     MYRootViewController *demo = [[MYRootViewController alloc] init];
     demo.url = url;
     [[UIApplication sharedApplication] delegate].window.rootViewController = [[WXRootViewController alloc] initWithRootViewController:demo];

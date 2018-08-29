@@ -1,13 +1,14 @@
 <template>
-    <div class="rootview">
+    <div class="game_rootview" @viewappear="onViewappear">
         <web ref="webview" class="gamewebview" :src="url"></web>
     </div>
 </template>
 
 <script>
 
-    import {WxcButton,WxcLoading} from 'weex-ui'
+    import {WxcButton, WxcLoading} from 'weex-ui'
     const modal = weex.requireModule('modal');
+    const customEvent = weex.requireModule('event');
     const navigator = weex.requireModule('navigator');
     export default {
         components: {WxcButton},
@@ -33,13 +34,21 @@
                 }
             }
         },
+        created(){
+            customEvent.setStateBarHidden('YES');
+//            modal.toast({'message': '2222222222222222', 'duration': 1});
+        },
         methods: {
+            onViewappear(){
+                modal.toast({'message': '=======onViewappear', 'duration': 1});
+//                customEvent.setStateBarHidden('YES');
+            },
             loginBtnClick(e){
-                modal.toast({'message': '点击了登录', 'duration': 1});
+
+//                modal.toast({'message': '点击了登录', 'duration': 1});
+//                customEvent.
             },
             resBtnClick(){
-
-
                 let nextURL = this.getJumpBaseUrl('registered');
                 navigator.push({url: nextURL})
             },
@@ -77,19 +86,17 @@
 </script>
 
 <style scoped>
-    .rootview {
+    .game_rootview {
         position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        /*height: 1334px;*/
-        background-color: white;
+        top: 0px;
+        left: 0px;
+        bottom: 40px;
+        right: 0px;
     }
 
     .gamewebview {
         position: absolute;
-        top: 0px;
+        top: -40px;
         left: 0px;
         right: 0px;
         bottom: 0px;

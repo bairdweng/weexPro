@@ -1,14 +1,11 @@
 <template>
-    <div class="rootview">
-        <!--<div dataRole = "navbar" :style="{  backgroundColor: 'black' }"></div>-->
-
+    <div class="rootview" @viewappear="onViewappear">
         <div style="height: 40px;background-color: #009ff0;"></div>
         <wxc-minibar title="登录"
                      background-color="#009ff0"
                      text-color="#FFFFFF"
                      left-text=""
                      leftButton=""></wxc-minibar>
-
         <div class="loginview">
             <div style="top: 20px">
                 <input type="text" placeholder="用户名" return-key-type="next" class="input" v-model="userName"/>
@@ -35,6 +32,7 @@
     const modal = weex.requireModule('modal');
     const navigator = weex.requireModule('navigator');
     const globalEvent = weex.requireModule('globalEvent');
+    const customEvent = weex.requireModule('event');
     export default {
         components: {WxcButton, WxcLoading, WxcMinibar},
         name: '登录页面',
@@ -42,8 +40,8 @@
             return {
                 name: '登录2222',
                 isShow: false,
-                userName: '',
-                passWord: ''
+                userName: 'bairdweng',
+                passWord: '111111'
             }
         },
         computed: {
@@ -67,35 +65,17 @@
                 }
             }
             catch (r) {
-
             }
-
         },
         created(){
-//            modal.toast({'message': '哈哈哈哈', 'duration': 1});
-
-            globalEvent.addEventListener("geolocation", function (e) {
-
+            globalEvent.addEventListener("viewappear", function (e) {
                 modal.toast({'message': '2222222222222222', 'duration': 1});
-
-
-//                console.log("WXApplicationDidBecomeActiveEvent");
             });
         },
         methods: {
-            onappear (event) {
-                console.log('onappear:', event)
-                modal.toast({
-                    message: 'onappear',
-                    duration: 0.8
-                })
-            },
-            ondisappear (event) {
-                console.log('ondisappear:', event)
-                modal.toast({
-                    message: 'ondisappear',
-                    duration: 0.8
-                })
+            onViewappear (event) {
+                navigator.setNavBarHidden({hidden: "1"});
+                customEvent.setStateBarHidden('NO');
             },
             minibarLeftButtonClick(){
 
@@ -104,22 +84,25 @@
 
             },
             loginBtnClick(){
+                if(this.isShow){
+                    return;
+                }
                 this.isShow = true;
-                ApiServices.login(this.userName, this.passWord, (ret) => {
-                    this.isShow = false;
-                    if (ret && ret['state'] === '1') {
-                        modal.toast({'message': '登陆成功', 'duration': 1});
-                        this.goGamePage();
-                    }
-                    else if (ret && ret['error']) {
-                        modal.toast({'message': ret['error'], 'duration': 1});
-                    }
-                    else {
-
-                    }
-                });
+                setTimeout(()=>{
+                    ApiServices.login(this.userName, this.passWord, (ret) => {
+                        this.isShow = false;
+                        if (ret && ret['state'] === '1') {
+                            modal.toast({'message': '登陆成功', 'duration': 1});
+                            this.goGamePage();
+                        }
+                        else if (ret && ret['error']) {
+                            modal.toast({'message': ret['error'], 'duration': 1});
+                        }
+                        else {
+                        }
+                    });
+                },1500);
             },
-
             goGamePage(){
                 setTimeout(() => {
                     let nextURL = this.getJumpBaseUrl('game');
@@ -128,7 +111,7 @@
             },
             resBtnClick(){
                 let nextURL = this.getJumpBaseUrl('registered');
-                navigator.push({url: nextURL})
+                navigator.push({url: nextURL, navShow: false})
             },
             getJumpBaseUrl(toUrl) {
                 var bundleUrl = weex.config.bundleUrl;

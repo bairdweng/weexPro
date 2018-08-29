@@ -11,7 +11,6 @@ const isWin = /^win/.test(process.platform);
 
 //设置weex页面配置。registered.js
 const weexEntry = {
-    'index': helper.page_root_js('entry.js'),
     'login': helper.page_root_js('login.js'),
     'registered': helper.page_root_js('registered.js'),
     'game': helper.page_root_js('game.js')
@@ -48,10 +47,10 @@ const getEntryFile = () => {
     const routerFile = path.join(vueWebTemp, config.routerFilePath);
     fs.outputFileSync(routerFile, getRouterFileContent(helper.page_root_js(config.routerFilePath)));
 
-    const entryFile = path.join(vueWebTemp, config.entryFilePath);
-    fs.outputFileSync(entryFile, getEntryFileContent(helper.page_root_js(config.entryFilePath), routerFile));
+    // const entryFile = path.join(vueWebTemp, config.entryFilePath);
+    // fs.outputFileSync(entryFile, getEntryFileContent(helper.page_root_js(config.entryFilePath), routerFile));
     return {
-        index: entryFile,
+        // index: entryFile,
         login: getPageConfig('login.js', routerFile),
         registered: getPageConfig('registered.js', routerFile),
         game: getPageConfig('game.js', routerFile)

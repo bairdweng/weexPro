@@ -34,9 +34,7 @@
 -(void)f_viewDidLoad{
     [self f_viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
-
 }
-
 -(void)nima_viewWillAppear:(BOOL)animated{
     @try{
         [self nima_viewWillAppear:animated];
@@ -44,19 +42,9 @@
     }@catch(NSException *ex){
         
     }@finally{
-        
     }
-    
     WXSDKInstance *ins =  [WXSDKManager bridgeMgr].topInstance;
     NSLog(@"%@",ins);
-    
-//    [[WXSDKEngine topInstance].parentInstance fireGlobalEvent:@"viewWillAppear" params:@{}];
-//    [weexInstance fireGlobalEvent:@"geolocation" params:@{@"key":@"value"}];
-
-//    [self nima_viewWillAppear:animated];
-//    NSLog(@"%@",@"1231231231312312===");
-//    [WXSDKEngine bridgeMgr]f
-    
 }
 - (void)f_viewDidAppear:(BOOL)animated{
     [self f_viewDidAppear:animated];

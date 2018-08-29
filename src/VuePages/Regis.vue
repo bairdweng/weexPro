@@ -1,7 +1,7 @@
 <template>
     <!--<div style="width: 100%;height: 100%;position: absolute">-->
     <!--<div  style="background: red;width: 100%;height: 100%">-->
-    <div class="rootview">
+    <div class="rootview" @viewappear="onViewappear">
         <div style="height: 40px;background-color: #009ff0;"></div>
         <wxc-minibar title="注册"
                      background-color="#009ff0"
@@ -61,6 +61,10 @@
 //            cosole.log('')
         },
         methods: {
+            onViewappear(){
+                navigator.setNavBarHidden({hidden: "1"});
+
+            },
             loginBtnClick(e){
                 modal.toast({'message': '点击了登录', 'duration': 1});
             },

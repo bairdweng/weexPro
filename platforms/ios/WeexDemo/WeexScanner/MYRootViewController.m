@@ -14,7 +14,6 @@
 #import <WeexSDK/WXSDKManager.h>
 #import <SRWebSocket.h>
 #import <FDFullscreenPopGesture/UINavigationController+FDFullscreenPopGesture.h>
-#import "WXSDKInstance+Helper.h"
 @interface MYRootViewController ()<UIScrollViewDelegate, UIWebViewDelegate,SRWebSocketDelegate>
 @property (nonatomic, strong) WXSDKInstance *instance;
 @property (nonatomic, strong) UIView *weexView;
@@ -34,7 +33,6 @@
         _hotReloadSocket.delegate = self;
         [_hotReloadSocket open];
     }
-    
 #endif
     
     [self render];
