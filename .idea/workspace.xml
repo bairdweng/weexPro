@@ -2,38 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22222da3-31fe-43d5-8ac0-61d0bcf9f4f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo/Helper/WXCustomEventModule.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo/Helper/WXCustomEventModule.m" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/index.web.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo/Helper/WXSDKInstance+Helper.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo/Helper/WXSDKInstance+Helper.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/platforms/ios/bundlejs/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index.vue" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/multablePage/entry.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/webpack.common.conf.js" afterPath="$PROJECT_DIR$/configs/webpack.common.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configs/webpack.prod.conf.js" afterPath="$PROJECT_DIR$/configs/webpack.prod.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/game.js" afterPath="$PROJECT_DIR$/dist/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/game.web.js" afterPath="$PROJECT_DIR$/dist/game.web.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/login.js" afterPath="$PROJECT_DIR$/dist/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/login.web.js" afterPath="$PROJECT_DIR$/dist/login.web.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/registered.js" afterPath="$PROJECT_DIR$/dist/registered.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/registered.web.js" afterPath="$PROJECT_DIR$/dist/registered.web.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/vendor.web.js" afterPath="$PROJECT_DIR$/dist/vendor.web.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo.xcworkspace/xcuserdata/baird.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo.xcworkspace/xcuserdata/baird.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexConfig/WXBaseViewController+helper.m" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexConfig/WXBaseViewController+helper.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexConfig/WeexSDKManager.m" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexConfig/WeexSDKManager.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexDemo-Info.plist" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexDemo-Info.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexScanner/MYRootViewController.m" afterPath="$PROJECT_DIR$/platforms/ios/WeexDemo/WeexScanner/MYRootViewController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/bundlejs/game.js" afterPath="$PROJECT_DIR$/platforms/ios/bundlejs/game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/bundlejs/login.js" afterPath="$PROJECT_DIR$/platforms/ios/bundlejs/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/bundlejs/registered.js" afterPath="$PROJECT_DIR$/platforms/ios/bundlejs/registered.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VuePages/Game.vue" afterPath="$PROJECT_DIR$/src/VuePages/Game.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VuePages/Login.vue" afterPath="$PROJECT_DIR$/src/VuePages/Login.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/VuePages/Regis.vue" afterPath="$PROJECT_DIR$/src/VuePages/Regis.vue" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,17 +15,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Login.vue" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.vue" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/VuePages/Login.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="348">
+              <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-                <element signature="e#1333#1391#0" expanded="true" />
+                <element signature="e#1334#1392#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.prod.conf.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="webpack.prod.conf.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/webpack.prod.conf.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+            <state relative-caret-position="495">
+              <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -218,10 +188,10 @@
         <option value="$PROJECT_DIR$/dist/login.js" />
         <option value="$PROJECT_DIR$/src/VuePages/Regis.vue" />
         <option value="$PROJECT_DIR$/src/VuePages/Game.vue" />
-        <option value="$PROJECT_DIR$/src/VuePages/Login.vue" />
         <option value="$PROJECT_DIR$/configs/webpack.common.conf.js" />
         <option value="$PROJECT_DIR$/src/index.vue" />
         <option value="$PROJECT_DIR$/configs/webpack.prod.conf.js" />
+        <option value="$PROJECT_DIR$/src/VuePages/Login.vue" />
       </list>
     </option>
   </component>
@@ -539,25 +509,27 @@
       <workItem from="1535336890334" duration="17298000" />
       <workItem from="1535510023695" duration="3739000" />
       <workItem from="1535529974994" duration="1481000" />
+      <workItem from="1535595350746" duration="1161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82515000" />
+    <option name="totallyTimeSpent" value="83676000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-241" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26411074" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26677316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970297" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2069307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2069307" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -619,7 +591,7 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1333#1391#0" expanded="true" />
+            <element signature="e#1334#1392#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -728,7 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -891,20 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/VuePages/Login.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
-            <element signature="e#1333#1391#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.vue" />
     <entry file="file://$PROJECT_DIR$/src/multablePage/entry.js" />
     <entry file="file://$PROJECT_DIR$/src/helper/Navigation.js">
@@ -941,9 +898,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/configs/webpack.prod.conf.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+        <state relative-caret-position="495">
+          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/VuePages/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="e#1334#1392#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -16,6 +16,7 @@
                     <wxc-button text="登录" :btn-style="login_button"
                                 @wxcButtonClicked="loginBtnClick"></wxc-button>
                 </div>
+
                 <div style="align-items: center;top: 90px">
                     <wxc-button type="white" text="注册" :btn-style="res_button"
                                 @wxcButtonClicked="resBtnClick"></wxc-button>
@@ -76,6 +77,7 @@
             onViewappear (event) {
                 navigator.setNavBarHidden({hidden: "1"});
                 customEvent.setStateBarHidden('NO');
+
             },
             minibarLeftButtonClick(){
 
@@ -84,11 +86,11 @@
 
             },
             loginBtnClick(){
-                if(this.isShow){
+                if (this.isShow) {
                     return;
                 }
                 this.isShow = true;
-                setTimeout(()=>{
+                setTimeout(() => {
                     ApiServices.login(this.userName, this.passWord, (ret) => {
                         this.isShow = false;
                         if (ret && ret['state'] === '1') {
@@ -101,7 +103,7 @@
                         else {
                         }
                     });
-                },1500);
+                }, 1500);
             },
             goGamePage(){
                 setTimeout(() => {
